@@ -1,1 +1,1 @@
-# Addons for my project 'Eazy English' =
+# Addons for my project 'Eazy English'
