@@ -1,1 +1,2 @@
-# Addons for my project 'Eazy English'
+# Addons for 'Eazy English' project
+## Added translator (NEW!)
