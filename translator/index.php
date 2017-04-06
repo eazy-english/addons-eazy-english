@@ -18,8 +18,10 @@
         <td><label for="ru">Russian</label></td>
         <td>
             <?php if(isset($_POST["translate"])): ?>
-            <?php $txt = $_POST["en"]; ?>
-            <?php $data = file_get_contents("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20170322T163740Z.f8d01cb0f53f2081.5178d427077d54192105e52f39d8bbebf203336a&text=$txt&lang=en-ru&format=plain");
+            <?php $txt = urlencode($_POST["en"]);
+                  $txt = htmlspecialchars($txt);
+             ?> 
+            <?php $data = file_get_contents("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20170404T173438Z.9da8960de5e20711.4344eb7a73a05032d819c59cc32642a4ed5cc62b&text=$txt&lang=en-ru&format=plain&options=1");
             $json = json_decode($data);?>
             <?php foreach($json->text as $text): ?>
             <textarea name="ru" style="font-size: 21px;" cols="15" rows="5"><?php echo $text; ?></textarea>
